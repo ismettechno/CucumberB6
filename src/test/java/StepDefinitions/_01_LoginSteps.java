@@ -1,6 +1,10 @@
 package StepDefinitions;
 
-import io.cucumber.java.en.*;  // * hepsi
+//import io.cucumber.java.en.Given;
+//import io.cucumber.java.en.Then;
+//import io.cucumber.java.en.When;   //Yukarıdaki 3 impotrun yerine aşağıdaki yazılabilir
+
+import io.cucumber.java.en.*;  // Burada yıldız hepsi demek , hepsi Eklendi, import oldu
 
 public class _01_LoginSteps {
 
