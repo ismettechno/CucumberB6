@@ -12,7 +12,6 @@ public class _01_LoginSteps {
     @Given("Navigate to Campus")
     public void navigate_to_campus() {
         System.out.println("Site açıldı");
-
         GWD.getDriver().get("https://test.mersys.io/");
     }
 
@@ -29,5 +28,7 @@ public class _01_LoginSteps {
     public void user_should_login_successfully() {
 
         System.out.println("Siteye girildiği doğrulandı");
+
+
     }
 }
