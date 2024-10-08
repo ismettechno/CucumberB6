@@ -21,13 +21,13 @@ public class _01_LoginSteps {
     public void enter_username_and_password_and_click_login_button() {
         System.out.println("Username ve şifre gönderildi");
 
-
+//        Login ekranı gözükene kadar bekle
 //        dc.username.sendKeys("turkeyts"); wait+scrol+clear
 //        dc.password.sendKeys("TechnoStudy123");wait+scrol+clear
 //        dc.loginButton.click(); wait+scrol
 
         dc.mySendKeys(dc.username,"turkeyts");
-        dc.mySendKeys(dc.password,"");
+        dc.mySendKeys(dc.password,"TechnoStudy123");
         dc.myClick(dc.loginButton);
 
 
