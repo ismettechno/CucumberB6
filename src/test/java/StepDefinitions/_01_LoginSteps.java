@@ -45,6 +45,6 @@ public class _01_LoginSteps {
 //
 //        Assert.assertTrue(dc.headText.getText().equals("Internship") );
 
-         dc.verifyContainsText(dc.headText,"Internship");
+         dc.LoginContainsText(dc.headText,"Internship");
     }
 }

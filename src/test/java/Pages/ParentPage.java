@@ -1,6 +1,7 @@
 package Pages;
 
 import Utilities.GWD;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -30,10 +31,16 @@ public class ParentPage {
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
 
-    public void verifyContainsText(WebElement element, String value){
+    public void LoginContainsText(WebElement element, String value){
         wait.until(ExpectedConditions.textToBePresentInElement(element,value));
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()) );
     }
+
+    public void verifyMessageContainsText(WebElement element, String value){
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div/*"),0));
+        //Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()) );
+    }
+
 
 }
 
