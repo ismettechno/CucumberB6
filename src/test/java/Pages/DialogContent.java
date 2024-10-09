@@ -24,4 +24,16 @@ public class DialogContent extends ParentPage {
     @FindBy(css="span[class='mat-mdc-tooltip-trigger logo-text']")
     public WebElement headText;
 
+    @FindBy(xpath="//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
+    public WebElement addButton;
+
+
+
+
 }
+
+
+//ms-add-button[@tooltip='COUNTRY.TITLE.ADD']//button
+//ms-add-button[@tooltip='STATE.TITLE.ADD']//button
+
+//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button
