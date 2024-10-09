@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+
 public class _02_CountrySteps {
     LeftNav ln=new LeftNav();
     DialogContent dc=new DialogContent();
@@ -19,8 +20,11 @@ public class _02_CountrySteps {
 
     @When("Create a country")
     public void createACountry() {
+        String ulkeAdi= RandomStringUtils()
+
         dc.myClick(dc.addButton);
-        // isim ve kodu gönder
+        dc.mySendKeys(dc.nameInput,"ülkeadi");
+        dc.mySendKeys(dc.codeInput,"ülkekodu");
         // kaydet butonuna bas
     }
 
