@@ -25,3 +25,5 @@ Feature: Citizenship Functionality
 
      #  dataProvider (TestNG için), Senaryo Outline (cucumber)
      #  görevi verilen her değer için, tüm senayo çalışır
+
+  # TODO : Sates menusu create,update,delete olarak, Senaryo outline şeklinde 5 kez çalıştırınız
