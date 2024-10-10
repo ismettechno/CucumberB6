@@ -71,6 +71,10 @@ public class DialogContent extends ParentPage {
     {
         mySendKeys(searchInput,deleteName);
         myClick(searchButton);
+
+        //sayfa yenilenen kadar bekle, arama sonuçlanana kadar bekle
+        wait.until(ExpectedConditions.elementToBeClickable(this.searchButton));
+
         myClick(deleteImageBtn);
         myClick(deleteDialogBtn);
     }
