@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.testng.Assert;
 
 
 public class _02_CountrySteps {
@@ -28,11 +29,12 @@ public class _02_CountrySteps {
         dc.mySendKeys(dc.nameInput,ulkeAdi);
         dc.mySendKeys(dc.codeInput,ulkeKodu);
         dc.myClick(dc.saveButton);
+
     }
 
     @Then("Success message should be displayed")
     public void successMessageShouldBeDisplayed() {
-        dc.verifyMessageContainsText(dc.successMessage,"success");
+        dc.verifyMessageContainsText("success");
     }
 
     @When("Create a country name as {string} code as {string}")
