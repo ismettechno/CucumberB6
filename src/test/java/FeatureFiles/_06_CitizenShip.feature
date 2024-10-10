@@ -13,13 +13,15 @@ Feature: Citizenship Functionality
     And Navigate to CitizenShip
 
   Scenario: Create a Citizenship with parameter
-    When Create a CitizenShip name as "is11m12CS121" shortKod as "ic112sk121"
+    When Create a CitizenShip name as "i7s11m12CS121" shortKod as "i2c112sk121"
     Then Success message should be displayed
 
   Scenario: Create a Citizenship with parameter Negatif
-    When Create a CitizenShip name as "is11m12CS121" shortKod as "ic112sk121"
+    When Create a CitizenShip name as "i7s11m12CS121" shortKod as "i2c112sk121"
     Then Already exist message should be displayed
 
   Scenario: Delete Citizenship
-    When user delete name as "is11m12CS121"
+    When user delete name as "i7s11m12CS121"
     Then Success message should be displayed
+
+
