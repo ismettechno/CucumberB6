@@ -87,3 +87,28 @@ public class ParentPage {
 //-Clickable olana kadar bekle(wait)
 //-Elemente kadar scroll yap
 //-Click yap
+
+/* Mesaj Assert İnceleme  */
+//MesajKutusuParent2.getText() =
+//        MesajKutusuParent2.getAccessibleName() = Country successfully created
+//MesajKutusuParent2.getTagName() = mat-expansion-panel-header
+//MesajKutusuParent2.getAttribute(innerHTML) =
+//
+//<span class="mat-content ng-tns-c2622717266-70 mat-content-hide-toggle">
+// <!---->
+//    <mat-panel-description _ngcontent-ng-c2614087749=""
+//class="mat-expansion-panel-header-description ng-star-inserted">
+//
+//     <div _ngcontent-ng-c2614087749="">Country successfully created</div>
+//
+//    </mat-panel-description><!---->
+//
+//</span><!---->
+//
+//        -----------------------------------------------------------------------------
+//
+//        MesajKutusuParent2.getText() =
+//        MesajKutusuParent2.getAccessibleName() =
+//        MesajKutusuParent2.getTagName() = mat-panel-description
+//MesajKutusuParent2.getAttribute(innerHTML) =
+//  <div _ngcontent-ng-c2614087749="">Country successfully created</div>

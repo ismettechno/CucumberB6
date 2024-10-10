@@ -27,4 +27,12 @@ public class _03_CitizenShipSteps {
         dc.mySendKeys(dc.shortName,citizenshipShortName);
         dc.myClick(dc.saveButton);
     }
+
+    @When("Create a CitizenShip name as {string} shortKod as {string}")
+    public void createACitizenShipNameAsShortKodAs(String name, String sKod) {
+        dc.myClick(dc.addButton);
+        dc.mySendKeys(dc.nameInput,name);
+        dc.mySendKeys(dc.shortName,sKod);
+        dc.myClick(dc.saveButton);
+    }
 }

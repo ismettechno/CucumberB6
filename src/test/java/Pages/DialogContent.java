@@ -48,7 +48,6 @@ public class DialogContent extends ParentPage {
     @FindBy(tagName = "mat-panel-description")
     public WebElement messageBox;
 
-
     public void verifyMessageContainsText(String value){
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"),0));
         Assert.assertTrue( this.messageBox.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
