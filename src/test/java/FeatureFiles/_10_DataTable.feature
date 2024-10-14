@@ -89,19 +89,19 @@ Feature: DataTable Functionality
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput       | isFee11 |
-      | codeInput       | 122312 |
-      | integrationCode | 121    |
-      | priorityCode    | 4561  |
+      | nameInput       | isFee2123 |
+      | codeInput       | 17312 |
+      | integrationCode | 1221    |
+      | priorityCode    | 45261  |
 
     And Click on the Element in Dialog
       | toggleBar  |
-      | saveButton |
+      | saveClose |
 
     Then Success message should be displayed
 
     And User delete the element from dialog
-      | isFee11 |
+      | isFee2123 |
 
     Then Success message should be displayed
 

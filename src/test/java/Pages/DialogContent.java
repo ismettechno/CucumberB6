@@ -68,8 +68,11 @@ public class DialogContent extends ParentPage {
     @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']//input")
     public WebElement priorityCode;
 
-    @FindBy(xpath = "//mat-slide-toggle[@formcontrolname='active']")
+    @FindBy(xpath = "//mat-slide-toggle[@formcontrolname='active']//button")
     public WebElement toggleBar;
+
+    @FindBy(xpath = "(//ms-save-button[@class='ng-star-inserted']//button)[2]")
+    public WebElement saveClose;
 
     public void verifyMessageContainsText(String value){
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"),0));
@@ -103,6 +106,7 @@ public class DialogContent extends ParentPage {
             case "integrationCode" : return this.integrationCode;
             case "priorityCode" : return this.priorityCode;
             case "toggleBar" : return this.toggleBar;
+            case "saveClose" : return this.saveClose;
         }
 
         return null;
