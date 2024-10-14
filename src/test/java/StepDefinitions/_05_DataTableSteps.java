@@ -38,7 +38,17 @@ public class _05_DataTableSteps {
         for (int i = 0; i < kutuVeYazilar.size(); i++) {
             WebElement kutu=dc.getWebElement(kutuVeYazilar.get(i).get(0));
             dc.mySendKeys(kutu, kutuVeYazilar.get(i).get(1));
+            //kutuya yazıyı gönder
         }
 
+    }
+
+    @And("User delete the element from dialog")
+    public void userDeleteTheElementFromDialog(DataTable dtSilinecekler) {
+        List<String> silinecekler=dtSilinecekler.asList();
+
+        for (int i = 0; i < silinecekler.size(); i++) {
+            dc.deleteItem(silinecekler.get(i));
+        }
     }
 }

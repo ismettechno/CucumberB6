@@ -16,10 +16,15 @@ Feature: DataTable Functionality
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput | ismetUlkesi1898 |
+      | nameInput | ismetUlkesi18981 |
       | codeInput | ismetKod1    |
 
     And Click on the Element in Dialog
       | saveButton |
+
+    Then Success message should be displayed
+
+    And User delete the element from dialog
+      | ismetUlkesi18981 |
 
     Then Success message should be displayed
