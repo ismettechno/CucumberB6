@@ -17,11 +17,11 @@ Feature: Citizenship Functionality
 
     Examples:
       | name    | shortName    |
-      | is71m22CS1 | is71mCS1shor1t |
-      | is71m22CS2 | is71mCS2shor1t |
-      | is71m22CS3 | is71mCS3shor1t |
-      | is71m22CS4 | is71mCS4shor1t |
-      | is71m22CS5 | is71mCS5shor1t |
+      | is71m5672CS1 | is71mCSor1t |
+      | is71m5672CS2 | is71mCSor1t |
+      | is71m5672CS3 | is71mCSor1t |
+      | is71m5672CS4 | is71mCSor1t |
+      | is71m5672CS5 | is71mCSor1t |
 
      #  dataProvider (TestNG için), Senaryo Outline (cucumber)
      #  görevi verilen her değer için, tüm senayo çalışır
