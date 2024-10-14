@@ -42,7 +42,7 @@ Feature: DataTable Functionality
 
     And User sending the keys in Dialog
       | nameInput | is12SCUlk1912 |
-      | shortName | is11SC11     |
+      | shortName | is11SC11      |
 
     And Click on the Element in Dialog
       | saveButton |
@@ -54,37 +54,56 @@ Feature: DataTable Functionality
 
     Then Success message should be displayed
 
-    Scenario: Create Nationality and Delete
+  Scenario: Create Nationality and Delete
 
-      And Click on the Element in LeftNav
-        | setup       |
-        | parameters  |
-        | nationalities |
+    And Click on the Element in LeftNav
+      | setup         |
+      | parameters    |
+      | nationalities |
 
-      And Click on the Element in Dialog
-        | addButton       |
+    And Click on the Element in Dialog
+      | addButton |
 
-      And User sending the keys in Dialog
-        | nameInput | isNTUlk19 |
+    And User sending the keys in Dialog
+      | nameInput | isNTUlk19 |
 
-      And Click on the Element in Dialog
-        | saveButton |
+    And Click on the Element in Dialog
+      | saveButton |
 
-      Then Success message should be displayed
+    Then Success message should be displayed
 
-      And User delete the element from dialog
-        | isNTUlk19 |
+    And User delete the element from dialog
+      | isNTUlk19 |
 
-      Then Success message should be displayed
+    Then Success message should be displayed
 
 
   Scenario: Fee Functionality and Delete
 
+    And Click on the Element in LeftNav
+      | setup      |
+      | parameters |
+      | fees       |
 
+    And Click on the Element in Dialog
+      | addButton |
 
+    And User sending the keys in Dialog
+      | nameInput       | isFee11 |
+      | codeInput       | 122312 |
+      | integrationCode | 121    |
+      | priorityCode    | 4561  |
 
+    And Click on the Element in Dialog
+      | toggleBar  |
+      | saveButton |
 
+    Then Success message should be displayed
 
+    And User delete the element from dialog
+      | isFee11 |
+
+    Then Success message should be displayed
 
 
 
