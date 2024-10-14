@@ -13,5 +13,13 @@ Feature: DataTable Functionality
       | countries  |
 
     And Click on the Element in Dialog
-      | addButton  |
+      | addButton |
 
+    And User sending the keys in Dialog
+      | nameInput | ismetUlkesi1898 |
+      | codeInput | ismetKod1    |
+
+    And Click on the Element in Dialog
+      | saveButton |
+
+    Then Success message should be displayed
