@@ -17,7 +17,7 @@ Feature: DataTable Functionality
 
     And User sending the keys in Dialog
       | nameInput | ismetUlkesi18981 |
-      | codeInput | ismetKod1    |
+      | codeInput | ismetKod1        |
 
     And Click on the Element in Dialog
       | saveButton |
@@ -28,3 +28,102 @@ Feature: DataTable Functionality
       | ismetUlkesi18981 |
 
     Then Success message should be displayed
+
+
+  Scenario:  CitizenShip Create and Delete
+
+    And Click on the Element in LeftNav
+      | setup       |
+      | parameters  |
+      | citizenship |
+
+    And Click on the Element in Dialog
+      | addButton |
+
+    And User sending the keys in Dialog
+      | nameInput | is12SCUlk1912 |
+      | shortName | is11SC11     |
+
+    And Click on the Element in Dialog
+      | saveButton |
+
+    Then Success message should be displayed
+
+    And User delete the element from dialog
+      | is12SCUlk1912 |
+
+    Then Success message should be displayed
+
+    Scenario: Create Nationality and Delete
+
+      And Click on the Element in LeftNav
+        | setup       |
+        | parameters  |
+        | nationalities |
+
+      And Click on the Element in Dialog
+        | addButton       |
+
+      And User sending the keys in Dialog
+        | nameInput | isNTUlk19 |
+
+      And Click on the Element in Dialog
+        | saveButton |
+
+      Then Success message should be displayed
+
+      And User delete the element from dialog
+        | isNTUlk19 |
+
+      Then Success message should be displayed
+
+
+  Scenario: Fee Functionality and Delete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
