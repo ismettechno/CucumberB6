@@ -11,3 +11,7 @@ Feature: DataTable Functionality
       | setup      |
       | parameters |
       | countries  |
+
+    And Click on the Element in Dialog
+      | addButton  |
+

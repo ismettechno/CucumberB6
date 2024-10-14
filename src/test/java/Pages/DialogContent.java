@@ -84,6 +84,17 @@ public class DialogContent extends ParentPage {
         myClick(deleteDialogBtn);
     }
 
+    public WebElement getWebElement(String strElementName){
+
+        switch (strElementName)
+        {
+            case "addButton" : return this.addButton;
+            case "saveButton" : return this.saveButton;
+        }
+
+        return null;
+    }
+
 
 }
 
