@@ -89,10 +89,10 @@ Feature: DataTable Functionality
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput       | isFee2123 |
-      | codeInput       | 17312 |
+      | nameInput       | isFee42123 |
+      | codeInput       | 1736612 |
       | integrationCode | 1221    |
-      | priorityCode    | 45261  |
+      | priorityCode    | 45555561  |
 
     And Click on the Element in Dialog
       | toggleBar  |

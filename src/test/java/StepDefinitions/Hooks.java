@@ -11,7 +11,7 @@ public class Hooks {   //Kanca
     @After
     public void after()
     {
-      //  GWD.quitDriver();
+        GWD.quitDriver();
     }
 
 }
