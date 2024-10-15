@@ -74,6 +74,13 @@ public class DialogContent extends ParentPage {
     @FindBy(xpath = "(//ms-save-button[@class='ng-star-inserted']//button)[2]")
     public WebElement saveClose;
 
+    ////mat-select[@formcontrolname='id']//span
+    @FindBy(xpath = "(//mat-select[@role='combobox'])[3]//span")
+    public WebElement countrySelect;
+
+    @FindBy(xpath = "(//mat-option[@role='option'])[3]//span")
+    public WebElement countryOption;
+
     public void verifyMessageContainsText(String value){
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"),0));
         Assert.assertTrue( this.messageBox.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
@@ -107,6 +114,8 @@ public class DialogContent extends ParentPage {
             case "priorityCode" : return this.priorityCode;
             case "toggleBar" : return this.toggleBar;
             case "saveClose" : return this.saveClose;
+            case "countrySelect" : return this.countrySelect;
+            case "countryOption" : return this.countryOption;
         }
 
         return null;
