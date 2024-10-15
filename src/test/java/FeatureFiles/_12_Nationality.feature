@@ -1,4 +1,4 @@
-Feature: DataTable ve Senaryo Outline
+Feature: Nationality DataTable ve Senaryo Outline
 
   Background:
     Given Navigate to Campus
