@@ -7,6 +7,7 @@ Feature: Cities Functionality Datatable
     When Enter username and password and click login button
     Then User should login successfully
 
+  @SmokeTest
   Scenario: Create and Delete Cities
 
     And Click on the Element in LeftNav
