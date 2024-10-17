@@ -2,6 +2,7 @@ package StepDefinitions;
 
 import Utilities.GWD;
 import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 
 public class Hooks {   //Kanca
 
@@ -9,8 +10,13 @@ public class Hooks {   //Kanca
     // Cucumbera ait her senaryodan sonra çalışan
     // Annotation
     @After
-    public void after()
+    public void after(Scenario senaryo) // Cucumberın ototmarik senaryo ile ilgili bilgiler değişkeni
     {
+        if (senaryo.isFailed())
+        {
+
+        }
+
         GWD.quitDriver();
     }
 
