@@ -79,3 +79,12 @@ https://www.youtube.com/watch?v=2EBg5gmBchg
                  ExtentService.getInstance().setSystemInfo("Ek Satır", "Açıklama");
          }
  }
+
+ 8-  PDF Report için gerekli işlem
+ https://www.programsbuzz.com/article/extent-pdf-report-cucumber-testng
+
+ extends.properties e aşağıdaki bölüm eklendi
+
+             #PDF Report
+             extent.reporter.pdf.start=true
+             extent.reporter.pdf.out=PdfReport.pdf
