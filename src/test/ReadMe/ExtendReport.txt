@@ -1,0 +1,30 @@
+ExtendReport İşlemleri
+
+https://www.toolsqa.com/extent-report/extent-report-for-cucumber-testng-project/
+https://medium.com/@kusuma.salinder/extent-report-cucumber6-adapter-not-working-with-selenium-testng-cucumber-3eeef41d5eef
+https://qaautomation.expert/2023/10/21/extentreports-version-5-for-cucumber-7-and-testng/
+https://www.youtube.com/watch?v=2EBg5gmBchg
+
+1- POM a ilgili dependecy eklnir.
+
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.10.1</version>
+        </dependency>
+
+2- Runner Class aşağıdaki plugin eklenir
+   plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+
+3- src/recources/extent.properties   dosyası resources klasörünün
+   altına açılarak aşağıdaki 2 satır eklendi.
+
+   extent.reporter.spark.start=true
+   extent.reporter.spark.out=test-output/SparkReport/Spark.html
+
+4-  extend report türkçe bilg çalışmaması sebebiyle kondu
+
+     public static WebDriver getDriver() {
+     
+           Locale.setDefault(new Locale("EN"));
+           System.setProperty("user.language", "EN");
