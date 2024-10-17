@@ -1,6 +1,7 @@
 package Runners;
 
 
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
@@ -11,5 +12,5 @@ import io.cucumber.testng.CucumberOptions;
         glue = {"StepDefinitions"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
-public class _07_ExtendReport {
+public class _07_ExtendReport extends AbstractTestNGCucumberTests {
 }
