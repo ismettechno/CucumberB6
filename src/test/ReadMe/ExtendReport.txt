@@ -46,8 +46,14 @@ https://www.youtube.com/watch?v=2EBg5gmBchg
          screenshot.rel.path=../screenshots/
 
        b) Hooks a aşağıdaki eklendi
-              if (senaryo.isFailed()){
-                   TakesScreenshot ts=((TakesScreenshot) GWD.getDriver());
-                   byte[] hafizadakiHali=ts.getScreenshotAs(OutputType.BYTES);
-                   senaryo.attach(hafizadakiHali, "image/png", "screenshot name");
-               }
+                  @After
+                  public void after(Scenario senaryo) // Cucumberın ototmarik senaryo ile ilgili bilgiler değişkeni
+                  {
+                      if (senaryo.isFailed()){
+                          TakesScreenshot ts=((TakesScreenshot) GWD.getDriver());
+                          byte[] hafizadakiHali=ts.getScreenshotAs(OutputType.BYTES);
+                          senaryo.attach(hafizadakiHali, "image/png", "screenshot name");
+                      }
+
+                      GWD.quitDriver();
+                  }
