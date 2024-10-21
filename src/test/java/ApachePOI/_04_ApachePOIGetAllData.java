@@ -13,6 +13,7 @@ public class _04_ApachePOIGetAllData {
         Workbook workbook= WorkbookFactory.create(inputStream);
         Sheet sheet=workbook.getSheetAt(0); // ilk sayfa
 
+        //1.Yol
         //zoo.leng kaç satırım var
         int rowCount= sheet.getPhysicalNumberOfRows();//satır sayısı
         System.out.println("rowCount = " + rowCount);
@@ -28,6 +29,15 @@ public class _04_ApachePOIGetAllData {
             System.out.println();
         }
 
+        //2.Yol
+        for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {  //zoo.length
+
+            for (int j = 0; j < sheet.getRow(i).getPhysicalNumberOfCells(); j++) {  //zoo[i].length
+                System.out.print(sheet.getRow(i).getCell(j)+" "); //zoo[i][j]
+            }
+
+            System.out.println();
+        }
 
     }
 }
