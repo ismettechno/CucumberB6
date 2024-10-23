@@ -40,15 +40,20 @@ public class ExcelUtility {
         return tablo;
     }
 
-    public static void writeToExcel(String path, String testName, String testResult){
-        File dosya=new File(path);
+    public static void writeToExcel(String path, String testName, String testResult) {
+        File dosya = new File(path);
         try {
             if (!dosya.exists()) { // dosya yok ise
                 XSSFWorkbook workbook = new XSSFWorkbook(); //yeni oluştur
                 XSSFSheet sheet = workbook.createSheet("Sayfa1");
                 Row yeniSatir = sheet.createRow(0);
+
                 Cell yeniHucre = yeniSatir.createCell(0);
+                yeniHucre.setCellValue(testName);  //değeri ver
+
+                yeniHucre = yeniSatir.createCell(1);
                 yeniHucre.setCellValue(testResult);  //değeri ver
+
                 FileOutputStream outputStream = new FileOutputStream(path);  //kaydet
                 workbook.write(outputStream);
                 workbook.close();
@@ -59,21 +64,23 @@ public class ExcelUtility {
                 Workbook workbook = WorkbookFactory.create(inputStream);
                 Sheet sheet = workbook.getSheetAt(0);
                 int enSonSatir = sheet.getPhysicalNumberOfRows();
+
                 Row yeniSatir = sheet.createRow(enSonSatir);
                 Cell yeniHucre = yeniSatir.createCell(0);
+                yeniHucre.setCellValue(testName);  //değeri ver
+
+                yeniHucre = yeniSatir.createCell(1);
                 yeniHucre.setCellValue(testResult);  //değeri ver
+
                 FileOutputStream outputStream = new FileOutputStream(path);  //kaydet
                 workbook.write(outputStream);
                 workbook.close();
                 outputStream.close();
                 System.out.println("Dosyaya Eklendi");
             }
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-
     }
 
 
