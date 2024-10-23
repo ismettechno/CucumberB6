@@ -20,7 +20,7 @@ import java.io.FileOutputStream;
 
 public class _11_Soru {
     public static void main(String[] args) {
-        String path="src/test/java/ApachePOI/resource/TestSonuclari3.xlsx";
+        String path="src/test/java/ApachePOI/resource/TestSonuclari.xlsx";
 
         String testName="Test Name";
         String testSonuc="Test Passed";

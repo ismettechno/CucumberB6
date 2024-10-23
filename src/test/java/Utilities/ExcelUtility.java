@@ -58,7 +58,6 @@ public class ExcelUtility {
                 workbook.write(outputStream);
                 workbook.close();
                 outputStream.close();
-                System.out.println("Dosya oluşturuldu");
             } else {  //dosya var ise
                 FileInputStream inputStream = new FileInputStream(path);  //var olanı oku
                 Workbook workbook = WorkbookFactory.create(inputStream);
@@ -76,7 +75,6 @@ public class ExcelUtility {
                 workbook.write(outputStream);
                 workbook.close();
                 outputStream.close();
-                System.out.println("Dosyaya Eklendi");
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
