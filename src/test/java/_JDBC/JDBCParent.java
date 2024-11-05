@@ -1,8 +1,6 @@
 package _JDBC;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
+import java.sql.*;
 
 public class JDBCParent {
     private static Connection connection;

@@ -1,7 +1,6 @@
 package _JDBC;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class _02_Soru_2 extends JDBCParent{
 
