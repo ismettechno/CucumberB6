@@ -4,3 +4,6 @@ Sorgularımı gönderiyorum, gelen sonuçlarla , web deki sonuçları
 karşılaştırıyorum.
 
 JDBC yi nasıl kullanırsın ?
+URL, username, password vererek Connection oluştururum.
+Bu connection üzerinden sorguları çalıştırmak için "Satatement" oluştururum.
+Sorgularımı çalıştırıp, ResultSet ile alıp kullanırım.
