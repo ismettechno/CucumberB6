@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class DialogContent extends ParentPage {
 
     public DialogContent() {
@@ -80,6 +82,9 @@ public class DialogContent extends ParentPage {
 
     @FindBy(xpath = "(//mat-option[@role='option'])[3]//span")
     public WebElement countryOption;
+
+    @FindBy(xpath = "//tbody//tr//td[2]")
+    public List<WebElement> nameList;
 
     public void verifyMessageContainsText(String value){
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"),0));
