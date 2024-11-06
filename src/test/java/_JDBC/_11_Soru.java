@@ -1,13 +1,29 @@
-package Utilities;
+package _JDBC;
 
-import java.sql.*;
+import jdk.dynalink.linker.LinkerServices;
+
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DBUtility {
+public class _11_Soru extends JDBCParent{
+// Kendisine gönderilen bir select sorgusunun sonucunu ArrayList olarak döndüren
+    // metodu yazınız. Mainde Listi yazdırarak sonucu kontrol ediniz.
 
-    private static Connection connection;
-    public static Statement statement;
+    public static void main(String[] args) {
+         String sorgu="select * from customer";
+
+         List<List<String>> gelenData=getListData(sorgu);
+
+         for(List<String> satir: gelenData) {
+             for (String hucre : satir)
+                 System.out.print(hucre+"\t");
+
+             System.out.println();
+         }
+    }
+
 
     public static List<List<String>> getListData(String sorgu)
     {
@@ -35,28 +51,6 @@ public class DBUtility {
 
         DBConnectionClose();
         return tablo;
-    }
-
-
-    public static void DBConnectionOpen() {
-        String url = "jdbc:mysql://demo.mersys.io:33906/sakila";
-        String username = "admin";
-        String password = "Techno24Study.%=";
-
-        try {
-            connection = DriverManager.getConnection(url, username, password);
-            statement = connection.createStatement();
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
-
-    public static void DBConnectionClose() {
-        try {
-            connection.close();
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
     }
 
 }
