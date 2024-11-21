@@ -22,7 +22,7 @@ public class GWD {
         System.setProperty("user.language", "EN");
 
         if (threadBrowserName.get()==null) // XML den çalışmayan durumlar için
-            threadBrowserName.set("chrome");  // default chrome
+            threadBrowserName.set("firefox");  // default chrome
 
 
         if (threadDriver.get() == null)   // bu hattaki driver NULL ise
