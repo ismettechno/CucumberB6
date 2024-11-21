@@ -41,11 +41,11 @@ public class GWD {
                 default:
 
                     if (isRunningOnJenkins()){
-                    //Jenkins için Chrome memory maximize edildi ve hafızada çalışır hale getirildi
-                    ChromeOptions ChromeOptions = new ChromeOptions();
-                    ChromeOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                        //Jenkins için Chrome memory maximize edildi ve hafızada çalışır hale getirildi
+                        ChromeOptions ChromeOptions = new ChromeOptions();
+                        ChromeOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
 
-                    threadDriver.set(new ChromeDriver(ChromeOptions));
+                        threadDriver.set(new ChromeDriver(ChromeOptions));
                    }
                    else
                    {
