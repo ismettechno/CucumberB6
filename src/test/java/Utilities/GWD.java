@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.time.Duration;
 import java.util.Locale;
@@ -28,7 +29,11 @@ public class GWD {
         if (threadDriver.get() == null)   // bu hattaki driver NULL ise
         {
             switch (threadBrowserName.get()) { //hattaki hangi brwser adı var
-                case "firefox" :  threadDriver.set(new FirefoxDriver()); break; // bu threade bir tane driver set et
+                case "firefox" :
+                    FirefoxOptions options = new FirefoxOptions();
+                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                    threadDriver.set(new FirefoxDriver(options));
+                                  break; // bu threade bir tane driver set et
                 case "edge" :  threadDriver.set(new EdgeDriver()); break;
                 default:  threadDriver.set(new ChromeDriver()); break;
             }
