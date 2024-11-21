@@ -2,6 +2,7 @@ package Utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -23,7 +24,7 @@ public class GWD {
         System.setProperty("user.language", "EN");
 
         if (threadBrowserName.get()==null) // XML den çalışmayan durumlar için
-            threadBrowserName.set("firefox");  // default chrome
+            threadBrowserName.set("chrome");  // default chrome
 
 
         if (threadDriver.get() == null)   // bu hattaki driver NULL ise
@@ -35,7 +36,11 @@ public class GWD {
                     threadDriver.set(new FirefoxDriver(options));
                                   break; // bu threade bir tane driver set et
                 case "edge" :  threadDriver.set(new EdgeDriver()); break;
-                default:  threadDriver.set(new ChromeDriver()); break;
+                default:
+                    ChromeOptions ChromeOptions = new ChromeOptions();
+                    ChromeOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+
+                    threadDriver.set(new ChromeDriver(ChromeOptions)); break;
             }
 
             threadDriver.get().manage().window().maximize();
