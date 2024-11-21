@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.tracing.opentelemetry.SeleniumSpanExporter;
 
 import java.time.Duration;
 import java.util.Locale;
@@ -31,16 +32,28 @@ public class GWD {
         {
             switch (threadBrowserName.get()) { //hattaki hangi brwser adı var
                 case "firefox" :
-                    FirefoxOptions options = new FirefoxOptions();
-                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-                    threadDriver.set(new FirefoxDriver(options));
-                                  break; // bu threade bir tane driver set et
+//                    FirefoxOptions options = new FirefoxOptions();
+//                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+//                    threadDriver.set(new FirefoxDriver(options));
+                    threadDriver.set(new FirefoxDriver());
+                    break; // bu threade bir tane driver set et
                 case "edge" :  threadDriver.set(new EdgeDriver()); break;
                 default:
+
+                    if (isRunningOnJenkins()){
+                    //Jenkins için Chrome memory maximize edildi ve hafızada çalışır hale getirildi
                     ChromeOptions ChromeOptions = new ChromeOptions();
                     ChromeOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
 
-                    threadDriver.set(new ChromeDriver(ChromeOptions)); break;
+                    threadDriver.set(new ChromeDriver(ChromeOptions));
+                   }
+                   else
+                   {
+                       threadDriver.set(new ChromeDriver());
+                   }
+
+
+                    break;
             }
 
             threadDriver.get().manage().window().maximize();
@@ -50,6 +63,10 @@ public class GWD {
         return threadDriver.get();
     }
 
+    public static boolean isRunningOnJenkins() {
+        String jenkinsHome = System.getenv("JENKINS_HOME");
+        return jenkinsHome != null && !jenkinsHome.isEmpty();
+    }
 
 
     public static void quitDriver(){
